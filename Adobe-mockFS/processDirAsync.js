@@ -2,9 +2,9 @@
 "use strict";
 
 // Dependencies
+var __ = require('lodash');
 var async = require('async');
 var mockfs = require('./mockfs.js');
-var __ = require('lodash');
 
 // Constants
 var CONCURRENCY_LIMIT = 4;
@@ -99,24 +99,20 @@ var processDirAsync = function (path, callback) {
 
     // Maps file to file type, and store it in a dictionary
     // callback(err)
-    // TODO: give a better name
-    var storeFileInEntry = function(file, callback) {
+    var processFile = function(file, callback) {
       var childPath = mockfs.join(path, file);
       statAsync(childPath, TIMEOUT, function(err, stat){
         if (err) {
           entry[file] = "error: " + err.message;
-          debugPrint("storeFileInEntry", childPath, err, entry);
           // We want to recover from error here because we want
           // to check other files / directories in the path even
           // when some of them failed to return their stat.
           return callback();
         }
         if (stat.isDirectory()) {
-          debugPrint("storeFileInEntry", childPath, err, entry);
           processDirAsync(childPath, function(err, childEntry){
             if (!err) {
               entry[file] = childEntry;
-              debugPrint("storeFileInEntry (after processDirAsync)", childPath, err, entry);
             }
             // We already ignore errors due to mockFS errors (timeout
             // or FS errors). If we get an error here, most likely it
@@ -126,24 +122,18 @@ var processDirAsync = function (path, callback) {
           });
         } else if (stat.isFile()) {
           entry[file] = "file";
-          debugPrint("storeFileInEntry", childPath, err, entry);
           return callback();
         } else {
           entry[file] = "unknown";
-          debugPrint("storeFileInEntry", childPath, err, entry);
           return callback();
         }
       });
     };
 
-    async.each(files, storeFileInEntry, function(err) {
-      debugPrint("async.eachLimit", path, err, entry);
-      return callback(err);
-    });
+    async.each(files, processFile, callback);
   };
 
   async.waterfall([listPath, iterateChildFiles], function(err) {
-    debugPrint("async.waterfall", path, err, entry);
     return callback(err, entry);
   });
 };
@@ -172,14 +162,14 @@ var processDirSync = function (path, entry) {
 };
 
 var main = function () {
+  var path = '/';
   if (RUN_PROCESS_DIR_SYNC) {
     var files = {};
-    processDirSync("/", files);
+    processDirSync(path, files);
     output(files);
   }
   else {
-    processDirAsync("/", function(err, files) {
-      debugPrint("FINAL RESULT", "/", err, files);
+    processDirAsync(path, function(err, files) {
       if (err) {
         console.log("error: " + err.message);
       }
