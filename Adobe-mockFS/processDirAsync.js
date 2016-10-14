@@ -24,7 +24,7 @@ var queue = async.queue(function(task, callback) {
     timeoutAsyncWrapper(mockfs.stat, path, timeout, callback);
   }
   else {
-    callback(new Error("Queue error: Unrecognized task name"));
+    callback(new Error('Queue error: Unrecognized task name'));
   }
 }, CONCURRENCY_LIMIT);
 
@@ -36,7 +36,7 @@ var debugPrint = function(funcName, path, err, entry) {
   if (!DEBUG) {
     return;
   }
-  var errString = "none";
+  var errString = 'none';
   if (err && err.message) {
     errString = err.message;
   }
@@ -49,7 +49,7 @@ var debugPrint = function(funcName, path, err, entry) {
 var timeoutAsyncWrapper = function(asyncFunc, arg, timeout, callback) {
   var timer = setTimeout(function() {
     timer = null;
-    return callback(new Error("Filesystem timeout"));
+    return callback(new Error('Filesystem timeout'));
   }, timeout);
   asyncFunc(arg, function(err, result) {
     if (!timer) {
@@ -74,14 +74,14 @@ var timeoutAsyncWrapper = function(asyncFunc, arg, timeout, callback) {
 // callback (err, result)
 // err is an error object
 var listAsync = function(path, timeout, callback) {
-  queue.push({name : "list", path : path, timeout : timeout}, callback);
+  queue.push({name : 'list', path : path, timeout : timeout}, callback);
 };
 
 // A wrapper function of mockFS.stat()
 // callback (err, result)
 // err is an error object
 var statAsync = function(path, timeout, callback) {
-  queue.push({name : "stat", path : path, timeout : timeout}, callback);
+  queue.push({name : 'stat', path : path, timeout : timeout}, callback);
 };
 
 // callback(err, entry)
@@ -103,7 +103,7 @@ var processDirAsync = function (path, callback) {
       var childPath = mockfs.join(path, file);
       statAsync(childPath, TIMEOUT, function(err, stat){
         if (err) {
-          entry[file] = "error: " + err.message;
+          entry[file] = 'error: ' + err.message;
           // We want to recover from error here because we want
           // to check other files / directories in the path even
           // when some of them failed to return their stat.
@@ -121,10 +121,10 @@ var processDirAsync = function (path, callback) {
             return callback(err);
           });
         } else if (stat.isFile()) {
-          entry[file] = "file";
+          entry[file] = 'file';
           return callback();
         } else {
-          entry[file] = "unknown";
+          entry[file] = 'unknown';
           return callback();
         }
       });
@@ -151,12 +151,12 @@ var processDirSync = function (path, entry) {
         entry[f] = {};
         processDirSync(childPath, entry[f]);
       } else if (stat.isFile()) {
-        entry[f] = "file";
+        entry[f] = 'file';
       } else {
-        entry[f] = "unknown";
+        entry[f] = 'unknown';
       }
     } catch (e) {
-      entry[f] = "error: " + e.message;
+      entry[f] = 'error: ' + e.message;
     }
   });
 };
@@ -169,9 +169,10 @@ var main = function () {
     output(files);
   }
   else {
+    console.log('I am slow but I am working hard :)');
     processDirAsync(path, function(err, files) {
       if (err) {
-        console.log("error: " + err.message);
+        console.log('error: ' + err.message);
       }
       else {
         output(files);
