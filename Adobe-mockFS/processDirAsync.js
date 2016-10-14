@@ -1,12 +1,6 @@
 /* jshint node:true */
 "use strict";
 
-// TODO: 
-// X Pass timeout to processDirAsync (optional)
-// X Write a errorHandler function to convert error output into standardized error object.
-// X Create a wrapper function for mockFS.stat and mockFS.listPath. 
-//   These functions should incorporate a timer in it and transform errorString into an error object
-
 // Dependencies
 var async = require('async');
 var mockfs = require('./mockfs.js');
@@ -17,6 +11,22 @@ var CONCURRENCY_LIMIT = 4;
 var RUN_PROCESS_DIR_SYNC = false;
 var TIMEOUT = 5000; // pass this as part of function signature
 var DEBUG = false;
+
+// task = { name : string, timeout : int , path : string }
+// name is either list or stat
+var queue = async.queue(function(task, callback) {
+  var path = task.path;
+  var timeout = task.timeout;
+  if (task.name === 'list') {
+    timeoutAsyncWrapper(mockfs.list, path, timeout, callback);
+  }
+  else if (task.name === 'stat') {
+    timeoutAsyncWrapper(mockfs.stat, path, timeout, callback);
+  }
+  else {
+    callback(new Error("Queue error: Unrecognized task name"));
+  }
+}, CONCURRENCY_LIMIT);
 
 var output = function(dict) {
   console.log(`${JSON.stringify(dict, null, 2)}`);
@@ -64,14 +74,14 @@ var timeoutAsyncWrapper = function(asyncFunc, arg, timeout, callback) {
 // callback (err, result)
 // err is an error object
 var listAsync = function(path, timeout, callback) {
-  timeoutAsyncWrapper(mockfs.list, path, timeout, callback);
+  queue.push({name : "list", path : path, timeout : timeout}, callback);
 };
 
 // A wrapper function of mockFS.stat()
 // callback (err, result)
 // err is an error object
 var statAsync = function(path, timeout, callback) {
-  timeoutAsyncWrapper(mockfs.stat, path, timeout, callback);
+  queue.push({name : "stat", path : path, timeout : timeout}, callback);
 };
 
 // callback(err, entry)
@@ -126,7 +136,7 @@ var processDirAsync = function (path, callback) {
       });
     };
 
-    async.eachLimit(files, CONCURRENCY_LIMIT, storeFileInEntry, function(err) {
+    async.each(files, storeFileInEntry, function(err) {
       debugPrint("async.eachLimit", path, err, entry);
       return callback(err);
     });
