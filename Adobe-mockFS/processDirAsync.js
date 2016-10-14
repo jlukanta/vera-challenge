@@ -13,7 +13,7 @@ var TIMEOUT = 5000; // pass this as part of function signature
 var DEBUG = false;
 
 // task = { name : string, timeout : int , path : string }
-// name is either list or stat
+// name is either 'list' or 'stat'
 var queue = async.queue(function(task, callback) {
   var path = task.path;
   var timeout = task.timeout;
@@ -61,7 +61,7 @@ var timeoutAsyncWrapper = function(asyncFunc, arg, timeout, callback) {
       clearTimeout(timer);
       timer = null;
       if (__.isString(err)) {
-        // Sometimes the function could return back a error
+        // Sometimes the function could return back an error
         // string. We want to cast it into an error object.
         err = new Error(err);
       }
