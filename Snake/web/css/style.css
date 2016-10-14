@@ -1,0 +1,27 @@
+body {
+  background-color: #333;
+}
+@-ms-viewport{
+  width: device-width;
+}
+#gameBoardCanvas {
+  background-color: #000;
+  border-style: solid;
+  border-width: medium;
+  border-color: #999;
+}
+div.center{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+div.warning {
+  margin:10;
+  font-family: "Arial";
+  font-size: 18px;
+  color:red;
+/*  background-color:#555;*/
+}
+div.hidden {
+  display: none;
+}

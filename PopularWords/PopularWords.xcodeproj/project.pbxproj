@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2E0C7591B65D1D300273E64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7581B65D1D300273E64 /* main.m */; };
+		A2E0C7611B65DA9500273E64 /* FrequentWordsAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7601B65DA9500273E64 /* FrequentWordsAnalyzer.m */; };
+		A2E0C7641B65DD2300273E64 /* WordToFrequency.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7631B65DD2300273E64 /* WordToFrequency.m */; };
+		A2E0C76B1B66062300273E64 /* FrequencyToWords.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C76A1B66062300273E64 /* FrequencyToWords.m */; };
+		A2E0C79B1B68A5A700273E64 /* FrequencyToWords.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C76A1B66062300273E64 /* FrequencyToWords.m */; };
+		A2E0C79C1B68A5AA00273E64 /* WordToFrequency.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7631B65DD2300273E64 /* WordToFrequency.m */; };
+		A2E0C79D1B68A5AD00273E64 /* FrequentWordsAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7601B65DA9500273E64 /* FrequentWordsAnalyzer.m */; };
+		A2E0C7A01B68A62E00273E64 /* WordToFrequencyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C79F1B68A62E00273E64 /* WordToFrequencyTest.m */; };
+		A2E0C7A21B68A65500273E64 /* FrequencyToWordTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7A11B68A65500273E64 /* FrequencyToWordTest.m */; };
+		A2E0C7A41B68A67300273E64 /* FrequentWordsAnalyzerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7A31B68A67300273E64 /* FrequentWordsAnalyzerTest.m */; };
+		A2E0C7AD1B68B16A00273E64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7581B65D1D300273E64 /* main.m */; };
+		A2E0C7B01B68B47400273E64 /* runner.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7AE1B68B47400273E64 /* runner.m */; };
+		A2E0C7B11B68B47400273E64 /* runner.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7AE1B68B47400273E64 /* runner.m */; };
+		A2E0C7B41B68B59300273E64 /* PopularWordsRunnerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E0C7B21B68B59200273E64 /* PopularWordsRunnerTest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2E0C7531B65D1D300273E64 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A2E0C7551B65D1D300273E64 /* PopularWords */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PopularWords; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2E0C7581B65D1D300273E64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2E0C75F1B65DA9500273E64 /* FrequentWordsAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequentWordsAnalyzer.h; sourceTree = "<group>"; };
+		A2E0C7601B65DA9500273E64 /* FrequentWordsAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequentWordsAnalyzer.m; sourceTree = "<group>"; };
+		A2E0C7621B65DD2300273E64 /* WordToFrequency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordToFrequency.h; sourceTree = "<group>"; };
+		A2E0C7631B65DD2300273E64 /* WordToFrequency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordToFrequency.m; sourceTree = "<group>"; };
+		A2E0C7691B66062300273E64 /* FrequencyToWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyToWords.h; sourceTree = "<group>"; };
+		A2E0C76A1B66062300273E64 /* FrequencyToWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyToWords.m; sourceTree = "<group>"; };
+		A2E0C7901B68A53800273E64 /* PopularWordsTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopularWordsTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2E0C7931B68A53800273E64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2E0C79F1B68A62E00273E64 /* WordToFrequencyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordToFrequencyTest.m; sourceTree = "<group>"; };
+		A2E0C7A11B68A65500273E64 /* FrequencyToWordTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyToWordTest.m; sourceTree = "<group>"; };
+		A2E0C7A31B68A67300273E64 /* FrequentWordsAnalyzerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequentWordsAnalyzerTest.m; sourceTree = "<group>"; };
+		A2E0C7AE1B68B47400273E64 /* runner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = runner.m; sourceTree = "<group>"; };
+		A2E0C7AF1B68B47400273E64 /* runner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = runner.h; sourceTree = "<group>"; };
+		A2E0C7B21B68B59200273E64 /* PopularWordsRunnerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularWordsRunnerTest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2E0C7521B65D1D300273E64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2E0C78D1B68A53800273E64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2E0C74C1B65D1D300273E64 = {
+			isa = PBXGroup;
+			children = (
+				A2E0C7571B65D1D300273E64 /* PopularWords */,
+				A2E0C7911B68A53800273E64 /* PopularWordsTest */,
+				A2E0C7561B65D1D300273E64 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2E0C7561B65D1D300273E64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2E0C7551B65D1D300273E64 /* PopularWords */,
+				A2E0C7901B68A53800273E64 /* PopularWordsTest.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2E0C7571B65D1D300273E64 /* PopularWords */ = {
+			isa = PBXGroup;
+			children = (
+				A2E0C7581B65D1D300273E64 /* main.m */,
+				A2E0C7AF1B68B47400273E64 /* runner.h */,
+				A2E0C7AE1B68B47400273E64 /* runner.m */,
+				A2E0C75F1B65DA9500273E64 /* FrequentWordsAnalyzer.h */,
+				A2E0C7601B65DA9500273E64 /* FrequentWordsAnalyzer.m */,
+				A2E0C7621B65DD2300273E64 /* WordToFrequency.h */,
+				A2E0C7631B65DD2300273E64 /* WordToFrequency.m */,
+				A2E0C7691B66062300273E64 /* FrequencyToWords.h */,
+				A2E0C76A1B66062300273E64 /* FrequencyToWords.m */,
+			);
+			path = PopularWords;
+			sourceTree = "<group>";
+		};
+		A2E0C7911B68A53800273E64 /* PopularWordsTest */ = {
+			isa = PBXGroup;
+			children = (
+				A2E0C7A11B68A65500273E64 /* FrequencyToWordTest.m */,
+				A2E0C7A31B68A67300273E64 /* FrequentWordsAnalyzerTest.m */,
+				A2E0C7B21B68B59200273E64 /* PopularWordsRunnerTest.m */,
+				A2E0C79F1B68A62E00273E64 /* WordToFrequencyTest.m */,
+				A2E0C7921B68A53800273E64 /* Supporting Files */,
+			);
+			path = PopularWordsTest;
+			sourceTree = "<group>";
+		};
+		A2E0C7921B68A53800273E64 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2E0C7931B68A53800273E64 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2E0C7541B65D1D300273E64 /* PopularWords */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2E0C75C1B65D1D300273E64 /* Build configuration list for PBXNativeTarget "PopularWords" */;
+			buildPhases = (
+				A2E0C7511B65D1D300273E64 /* Sources */,
+				A2E0C7521B65D1D300273E64 /* Frameworks */,
+				A2E0C7531B65D1D300273E64 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopularWords;
+			productName = PopularWords;
+			productReference = A2E0C7551B65D1D300273E64 /* PopularWords */;
+			productType = "com.apple.product-type.tool";
+		};
+		A2E0C78F1B68A53800273E64 /* PopularWordsTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2E0C7961B68A53800273E64 /* Build configuration list for PBXNativeTarget "PopularWordsTest" */;
+			buildPhases = (
+				A2E0C78C1B68A53800273E64 /* Sources */,
+				A2E0C78D1B68A53800273E64 /* Frameworks */,
+				A2E0C78E1B68A53800273E64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopularWordsTest;
+			productName = PopularWordsTest;
+			productReference = A2E0C7901B68A53800273E64 /* PopularWordsTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2E0C74D1B65D1D300273E64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Vera Lukman";
+				TargetAttributes = {
+					A2E0C7541B65D1D300273E64 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					A2E0C78F1B68A53800273E64 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = A2E0C7501B65D1D300273E64 /* Build configuration list for PBXProject "PopularWords" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A2E0C74C1B65D1D300273E64;
+			productRefGroup = A2E0C7561B65D1D300273E64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2E0C7541B65D1D300273E64 /* PopularWords */,
+				A2E0C78F1B68A53800273E64 /* PopularWordsTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A2E0C78E1B68A53800273E64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2E0C7511B65D1D300273E64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E0C76B1B66062300273E64 /* FrequencyToWords.m in Sources */,
+				A2E0C7B01B68B47400273E64 /* runner.m in Sources */,
+				A2E0C7591B65D1D300273E64 /* main.m in Sources */,
+				A2E0C7641B65DD2300273E64 /* WordToFrequency.m in Sources */,
+				A2E0C7611B65DA9500273E64 /* FrequentWordsAnalyzer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2E0C78C1B68A53800273E64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E0C7B41B68B59300273E64 /* PopularWordsRunnerTest.m in Sources */,
+				A2E0C7A21B68A65500273E64 /* FrequencyToWordTest.m in Sources */,
+				A2E0C79C1B68A5AA00273E64 /* WordToFrequency.m in Sources */,
+				A2E0C7B11B68B47400273E64 /* runner.m in Sources */,
+				A2E0C79B1B68A5A700273E64 /* FrequencyToWords.m in Sources */,
+				A2E0C79D1B68A5AD00273E64 /* FrequentWordsAnalyzer.m in Sources */,
+				A2E0C7A01B68A62E00273E64 /* WordToFrequencyTest.m in Sources */,
+				A2E0C7AD1B68B16A00273E64 /* main.m in Sources */,
+				A2E0C7A41B68A67300273E64 /* FrequentWordsAnalyzerTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A2E0C75A1B65D1D300273E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A2E0C75B1B65D1D300273E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A2E0C75D1B65D1D300273E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A2E0C75E1B65D1D300273E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A2E0C7971B68A53800273E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PopularWordsTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A2E0C7981B68A53800273E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PopularWordsTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2E0C7501B65D1D300273E64 /* Build configuration list for PBXProject "PopularWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2E0C75A1B65D1D300273E64 /* Debug */,
+				A2E0C75B1B65D1D300273E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2E0C75C1B65D1D300273E64 /* Build configuration list for PBXNativeTarget "PopularWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2E0C75D1B65D1D300273E64 /* Debug */,
+				A2E0C75E1B65D1D300273E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2E0C7961B68A53800273E64 /* Build configuration list for PBXNativeTarget "PopularWordsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2E0C7971B68A53800273E64 /* Debug */,
+				A2E0C7981B68A53800273E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2E0C74D1B65D1D300273E64 /* Project object */;
+}

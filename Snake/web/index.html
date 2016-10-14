@@ -1,0 +1,33 @@
+<html>
+<head>
+  <!-- Bootstrap for mobile compatibility -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnakeMMO - Vera Lukman</title>
+  
+  <!-- Bootstrap and jQuery -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+  <!-- socketIO -->
+  <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+  
+  <script src="./js/scripts.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="onLoadScript();">
+  <div class="center">
+    <div>
+      <canvas id="gameBoardCanvas" height="500" width="500"></canvas>
+    </div>
+    <div id="userLostDiv" style="display: none;" class="warning">
+      You LOST :(</br>
+      <button id="playButton" type="button" class="btn btn-success">Play Again!</button>
+    </div>
+    <div id="disconnectedDiv" style="display: none;" class="warning">
+      You got disconnected :(</br>
+      <button id="reconnectButton" type="button" class="btn btn-info">Reconnect!</button>
+    </div>
+  </div>
+</body>
+</html>

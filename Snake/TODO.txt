@@ -1,0 +1,82 @@
+TODO:
+
+[*] SINGLE PLAYER:
+    - I think Game.getFreePointInRadius is still buggy, especially for deciding new position for a player
+      - Sometimes player immediately hit the screen border
+    X Game.getFreePointInRadius: Help! Don't hardcode me!
+    X Create Apples so single player mode is not boring
+    X Consume apple (game.consumeApple(player)) and grow snake (player.growSnake())
+      X delete consumed apple
+    - We probably need to separate Player data and Player logic so the client can send data immediately without translating Player Object to Player data to be sent to server vice versa
+    - Should I have a gameboard that takes care of rendering? Or maybe a render class? Think!
+    - Player.setDirection: user can still go towards the opposite direction
+        eg. snake direction to the left, quickly tap down/up then left
+            result: snake dies because on next update the snake will hit itself.
+    
+[*] MMO (1 board)
+    X When user first joined, get all players in board
+      X Start game only when all players info has been received and player has been created
+      X Get userID from socket.ID
+    X Render other players 
+    X Add player when first joining to server
+      X Create a new player and update server
+      X Broadcast when player joins
+    X Synchronize Player(id, segments, direction) -- every X ms
+    X Broadcast when player lost
+      X Player got deleted when it dies and readded when game is restarted
+      - There is a problem here when there are many boards, see (*)
+    X Broadcast when player leaves / disconnected
+      X Delete player
+    X DO NOT update player position when disconnected!!
+    X What happens when player got disconnected from server, show 'reconnect' button
+      X Reset game after reconnected
+      - Need to give UI feedback after tapping that button "reconnecting"
+    X Notify server when there is a new apple
+      X Server broadcasts apple position when a new apple is created
+      X Server saves new apple position
+    X Notify server when apple is consumed (realTimeEngine.notifyAppleEaten(appleEaten))
+      X Server broadcasts apple when it's consumed
+      X Server deleted consumed apple
+    X Send list of apples on initialData
+      X Handle on client
+    - Apples are now saved in an array on client and server, I assume we won't be having a lot of apples at a time. Is this a good assumption?
+    X Notify server when player grows, server notifies other clients (I think this should be handled)
+    
+[*] MMO (many boards)
+    X When a user is online, figure out which board to go to
+      X server will automatically assign which board the user should join by subscribing user to specific room
+      X server just hardcodes and assigns to just one room, assign user to room with lowest count
+        X Test it
+      X (*) Server just assigns user to a board but not reserve a sport for if user is not playing (idling users).
+            User is idling when: (1) user just joined, assigned a board, but hasn't started playing
+                                 (2) user has lost but hasn't replayed the game
+            This will cause an issue when user is idling and server accidentally deletes the board because there is no other players.
+        - Server need to accurately count how many users in a board including idling users
+          - what if the user idles and never rejoins? Need a smart mechanism to handle this...
+        - POSSIBLE SOLUTIONS (not mutually exclusive): 
+          X When a user joins, creates a dummy player info on the server. Set a 'isIdle' flag to true
+            X On client, DO NOT render or consider users who are idling
+          X When a user lost, DO NOT remove user from players list, mark it as idling
+          X board.playersCount should return active users + idle users --> this way we avoid the problem when server is waiting for user to set up game & when user wants to replay
+          X only DELETE player when user gets DISCONNECTED
+          - when a user lost, set a timer when user can rejoin that board. If user does not replay in that specific time, user will be disconnected and they will need to reconnect. Possibly joining another board if the old board is gone
+            --> This is to make sure #boards does not grow all the time
+          - (opt) When user hits replay, have a smart way to assign user to a different board if user is the only participant?
+      - Currently server saves boards in an array because we assume that we won't have a lot of boards (say 100 max? or 1000? Still constant time). We may need to user a better data structure to quickly determine board with lowest participant count. If we are going to use redis to support multiple processes/servers, we can use their sorted set feature.. However keep in mind that once we use redis, some things will run asychronously. Be careful!
+    - When user lost, maybe automatically merge with available boards? or let the users choose?
+      - The point is we don't want to end up with an ever growing number of boards
+      - Which means delete a board when the last user leaves
+      
+FIXME:
+
+[*] Things to worry about (MMO)
+    - Currently we are using NodeJS which only makes use of 1 core (unless if you spawn another process). At some point this is going to be our bottleneck. We should have a load balancer in the future to balance load to different processor or even different server
+    - Use node cluster maybe?
+
+[*] Data IO (server/client)
+    - Currently we are sending data every 200 ms from each client. This can be very heavy on server. How about sending the data every time a client changes direction (along with updated location)
+        - On client, all snakes move at the same time (every 200 ms), client can just predict the next move of each snake
+      [CONS]
+        - Server does not have the most up to date data. When a client gets snakes initial position, it has to update data if need be for each snake and for each segment of a snake. Suppose each snake has 100 segments and we have at most 10 snakes, need to update 1000, probably not a bad thing? If it has 1000 segments, we have 10 snakes, 10K? That could be pretty long? -- check
+        - Do we broadcast direction change every time user changes direction? User could change direction more frequent than once every 200 ms. Also if we update every 200 ms, other users might end up seeing the snake going to the wrong direction because the time is not synchronized
+          - OK what if we change direction only when it's finalized on 200 ms mark, so we are ignoring other changes before then.. There might a possibility that on a different client the snake already advance to the previous direction. --> But this will be corrected on the next step. -- Lets think about this later after you are done coding :(

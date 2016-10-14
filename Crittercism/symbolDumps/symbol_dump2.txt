@@ -1,0 +1,11 @@
+0x000000002d3d16c0
+_CFDictionaryGetValue,0x000000002d3c7b30
+_CFBasicHashFindBucket,0x000000002d3c7bb8
+_CFRetain,0x000000002d3c8ab4
+__CFRetain,0x000000002d3c8b20
+__CFSetTSD,0x000000002d3c8c60
+_CFAllocatorAllocate,0x000000002d3c8cf0
+__CFGetTSD,0x000000002d3c8d60
+__CFRuntimeCreateInstance,0x000000002d3c8e28
+_CFDataCreateWithBytesNoCopy,0x000000002d3c8de0
+_CFPropertyListCreateFromXMLData,0x000000002d3c9038

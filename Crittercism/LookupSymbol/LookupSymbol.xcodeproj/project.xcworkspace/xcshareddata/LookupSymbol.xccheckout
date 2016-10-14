@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4C23B463-E9EA-4CBD-88B6-82874209103A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D89838E273892F88435581AD9DD529EA76589582</key>
+		<string>/Users/vlukman/Dropbox/Code%20Challenge%20-%20Vera/Crittercism/</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LookupSymbol/LookupSymbol.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D89838E273892F88435581AD9DD529EA76589582</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>/Users/vlukman/Dropbox/Code%20Challenge%20-%20Vera/Crittercism/</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D89838E273892F88435581AD9DD529EA76589582</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D89838E273892F88435581AD9DD529EA76589582</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Crittercism</string>
+		</dict>
+	</array>
+</dict>
+</plist>
